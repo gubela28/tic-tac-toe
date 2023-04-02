@@ -95,11 +95,11 @@ body {
     cursor: pointer;
     font-family: "Outfit", sans-serif;
 }
-.cpu-btn {
+/* .cpu-btn {
     background-color: #F2B137;
     margin-top: 32px;
-    box-shadow: inset 1px -6px 1px #cc8b13;
-}
+    box-shadow: inset 1px -6px 1px #cc8b13; 
+}*/
 .button-text {
     color: #10212A;
 }
@@ -219,10 +219,10 @@ body {
     height: 40px;
 }
 
-#modal {
+#modal, #modal-tie, #modal-restart {
     width: 100vw;
     height: 100vh;
-    display: none;
+    display: none; 
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;

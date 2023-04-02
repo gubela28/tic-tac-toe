@@ -24,11 +24,36 @@
                 <p class="result-text">TAKES THE ROUND</p>
             </div>
             <div class="result-buttons">
-                <button class="quit-btn">quit</button>
-                <button class="next-round-btn">next round</button>
+                <button class="quit-btn" onclick="quit()">quit</button>
+                <button class="next-round-btn" onclick="nextRound()">next round</button>
             </div>
         </div>
     </div>
+    <div id="modal-tie">
+        <div class="modal-box">
+            <div>
+                <p class="result-text">ROUND TIED</p>
+            </div>
+            <div class="result-buttons">
+                <button class="quit-btn" onclick="quit()">quit</button>
+                <button class="next-round-btn" onclick="nextRound()">next round</button>
+            </div>
+            </div>
+            </div>
+
+             <div id="modal-restart">
+        <div class="modal-box">
+            <div>
+                <p class="result-text">RESTART GAME?</p>
+            </div>
+            <div class="result-buttons">
+                <button class="quit-btn" onclick="closeModal()">NO, CANCEL</button>
+                <button class="next-round-btn" onclick="restartFo()">YES, RESTART</button>
+            </div>
+        </div>
+    </div>
+        </div>
+    
     <section id="home">
         <div class="home-header">
             <img src="./logo.svg" alt="x0-icon">
@@ -45,9 +70,9 @@
             </div>
             <p class="warning">REMEMBER : X GOES FIRST</p>
         </div>
-        <button class="new-game-btn cpu-btn" onclick="startGame('cpu')">
+        <!-- <button class="new-game-btn cpu-btn" onclick="startGame('cpu')">
             <h2 class="title button-text">NEW GAME (VS CPU)</h2>
-        </button>
+        </button> -->
         <button class="new-game-btn player-btn" onclick="startGame('player')">
             <h2 class="title button-text">NEW GAME  (VS PLAYER)</h2>
         </button>
@@ -61,7 +86,7 @@
                 <img src="./icon-x-gray.svg" alt="">
                 <h3>TURN</h3>
             </div>
-            <button class="restart">
+            <button class="restart" onclick="openRestartModal()">
                 <img src="./icon-restart.svg" alt="">
             </button>
             </div>
@@ -84,7 +109,7 @@
             </div>
             <div class="statistic-box">
                 <h3>ties</h3>
-                <span>0</span>
+                <span id="tie-score">0</span>
             </div>
             <div class="statistic-box">
                 <h3 id="o-score-text">O (CPU)</h3>

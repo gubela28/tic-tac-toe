@@ -6,8 +6,11 @@ const xScoreText = document.querySelector("#x-score-text");
 const oScoreText = document.querySelector("#o-score-text");
 const xScoreElement = document.querySelector("#x-score");
 const oScoreElement = document.querySelector("#o-score");
+const tieScoreElement = document.querySelector("#tie-score")
 const turnInfoImage = document.querySelector(".turn-box img");
 const modal  = document.querySelector("#modal");
+const modalTie  = document.querySelector("#modal-tie");
+const modalRestart  = document.querySelector("#modal-restart");
 const modalInfoText = document.querySelector(".result-info-text");
 const modalIcon =document.querySelector(".modal-box img");
 const modalResultText = document.querySelector(".result-text");
@@ -86,6 +89,27 @@ const onWinO = () => {
     }
 };
 
+const winningStyle = (array) => {
+    playButtons[array[0]].firstElementChild.src = "./icon-x-win.svg";
+    playButtons[array[1]].firstElementChild.src = "./icon-x-win.svg";
+    playButtons[array[2]].firstElementChild.src = "./icon-x-win.svg";
+    if(turn === "x") {
+        playButtons[array[0]].style.background = "#65E9E4";
+        playButtons[array[1]].style.background = "#65E9E4";
+        playButtons[array[2]].style.background = "#65E9E4";
+        playButtons[array[0]].firstElementChild.src = "./icon-x-win.svg";
+        playButtons[array[1]].firstElementChild.src = "./icon-x-win.svg";
+        playButtons[array[2]].firstElementChild.src = "./icon-x-win.svg";
+    } else {
+        playButtons[array[0]].style.background = "#F2B137";
+        playButtons[array[1]].style.background = "#F2B137";
+        playButtons[array[2]].style.background = "#F2B137";
+        playButtons[array[0]].firstElementChild.src = "./icon-o-win.svg";
+        playButtons[array[1]].firstElementChild.src = "./icon-o-win.svg";
+        playButtons[array[2]].firstElementChild.src = "./icon-o-win.svg";
+    }
+};
+
 const onHoverEffects = () => {
     for (let index = 0; index < freeButtons.length; index++) {
         const playButtonIndex = freeButtons[index];
@@ -101,12 +125,13 @@ const onHoverEffects = () => {
 
 const createClickedFunction = () => {
     for (let index = 0; index < playButtons.length; index++) {
-       playButtons[index].onclick = (event) => {
+        playButtons[index].style.background = "#1F3641";
+        playButtons[index].innerHTML = "";
+        playButtons[index].onclick = (event) => {
         event.target.classList.remove("xHover");
         event.target.classList.remove("oHover");
-
-const spliceIndex = freeButtons.indexOf(index);
-freeButtons.splice(spliceIndex, 1);
+        const spliceIndex = freeButtons.indexOf(index);
+        freeButtons.splice(spliceIndex, 1);
 
         const icon = document.createElement("img");
         icon.classList.add("play-icon");
@@ -117,7 +142,13 @@ freeButtons.splice(spliceIndex, 1);
             const win = checkXwin();
             if (win) {
                 onWinX();
+                winningStyle(win);
                 return; 
+            }
+            if(xArray.length === 5) {
+                modalTie.style.display = "flex";
+                tieScore++;
+                tieScoreElement.textContent = tieScore;
             }
             turn = "o";
             turnInfoImage.src = "./icon-o-gray.svg";
@@ -128,6 +159,7 @@ freeButtons.splice(spliceIndex, 1);
             const win = checkOwin();
             if (win) {
                 onWinO();
+                winningStyle(win);
                 return; 
             }
             turn = "x";
@@ -165,4 +197,57 @@ const startGame = (modeParam) => {
             oScoreText.textContent = "o (you)";
         }
     }
+};
+
+const quit = () => {
+reset();
+ xScore = 0;
+ tieScore = 0;
+ oScore = 0;
+ board.style.display = "none";
+ home.style.display = "flex";
+ oScoreElement.textContent = 0;
+ xScoreElement.textContent = 0;
+ tieScoreElement.textContent = 0;
+};
+
+const reset = () => {
+player1 = "x";
+mode ="cpu";
+turn ="x";
+freeButtons = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+xArray = [];
+oArray = [];
+xScore = 0;
+modal.style.display = "none";
+modalTie.style.display = "none";
+};
+
+const clerBoard = () => {
+
+};
+
+const nextRound = () => {
+reset();
+startGame(mode);
+};
+
+const openRestartModal = () => {
+    modalRestart.style.display = "flex";
+};
+
+const closeModal = () => {
+
+};
+
+const restartFo = () => {
+    xScore = 0;
+    tieScore = 0;
+    oScore = 0;
+    oScoreElement.textContent = 0;
+    xScoreElement.textContent = 0;
+    tieScoreElement.textContent = 0;
+    reset();
+    startGame(mode);
+    modalRestart.style.display = "none";
 };

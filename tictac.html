@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tictac.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian&family=Outfit:wght@500&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="tictac.js" defer></script> 
+    <title>tic tac toe</title>
+    <!--favicon-->
+    <link rel="icon" href="./favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+</head>
+<body>
+    <div id="modal">
+        <div class="modal-box">
+            <p class="result-info-text">OH NO, YOU LOST…</p>
+            <div>
+                <img src="./icon-x.svg" alt="">
+                <p class="result-text">TAKES THE ROUND</p>
+            </div>
+            <div class="result-buttons">
+                <button class="quit-btn">quit</button>
+                <button class="next-round-btn">next round</button>
+            </div>
+        </div>
+    </div>
+    <section id="home">
+        <div class="home-header">
+            <img src="./logo.svg" alt="x0-icon">
+        </div>
+        <div class="panel">
+            <h2 class="header-title title">PICK PLAYER 1’S MARK</h2>
+            <div class="buttons">
+                <button class="btn-box active " onclick="activateChoice('x')">
+                    <img class="x-icon" src="./icon-x.svg" alt="">
+                </button>
+                <button class="btn-box" onclick="activateChoice('o')">
+                    <img class="o-icon" src="./icon-o.svg" alt="">
+                </button>
+            </div>
+            <p class="warning">REMEMBER : X GOES FIRST</p>
+        </div>
+        <button class="new-game-btn cpu-btn" onclick="startGame('cpu')">
+            <h2 class="title button-text">NEW GAME (VS CPU)</h2>
+        </button>
+        <button class="new-game-btn player-btn" onclick="startGame('player')">
+            <h2 class="title button-text">NEW GAME  (VS PLAYER)</h2>
+        </button>
+    </section>
+    <section id="board">
+        <div class="board-header">
+            <div class="home-header">
+                <img src="./logo.svg" alt="x0-icon">
+            </div>
+            <div class="turn-box">
+                <img src="./icon-x-gray.svg" alt="">
+                <h3>TURN</h3>
+            </div>
+            <button class="restart">
+                <img src="./icon-restart.svg" alt="">
+            </button>
+            </div>
+            <div class="play-area">
+                <div class="play-btn"></div>
+                <div class="play-btn"></div>
+                <div class="play-btn"></div>
+                <div class="play-btn"></div>
+                <div class="play-btn"></div>
+                <div class="play-btn"></div>
+                <div class="play-btn"></div>
+                <div class="play-btn"></div>
+                <div class="play-btn"></div>
+            </div>
+         </div> 
+         <div class="statistics">
+            <div class="statistic-box">
+                <h3 id="x-score-text">X (YOU)</h3>
+                <span id="x-score">0</span>
+            </div>
+            <div class="statistic-box">
+                <h3>ties</h3>
+                <span>0</span>
+            </div>
+            <div class="statistic-box">
+                <h3 id="o-score-text">O (CPU)</h3>
+                <span id="o-score">0</span>
+            </div>
+            </div>
+         </div>
+    </section>
+</body>
+</html>

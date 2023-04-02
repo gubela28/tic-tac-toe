@@ -1,0 +1,297 @@
+body {
+    font-family: "Outfit", sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background-color:#1A2A33;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* general calasses*/
+.title {
+    font-weight: 700px;
+    font-size: 16px;
+    line-height: 20.16px;
+    letter-spacing: 1px;
+}
+.header-title {
+    color: #A8BFC9;
+    font-family:  "Outfit", sans-serif;
+    font-family: Outfit;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+   
+
+}
+/* general calasses*/
+#home, #board {
+    display: flex;
+    align-items:  center;
+    flex-direction: column;
+    width: 100%;
+}
+#board {
+    display: none;
+}
+.home-header {
+    display: flex;
+    align-items: center;
+    column-gap: 8.23px;
+}
+.home-header img {
+    width: 72px;
+}
+.panel {
+    width: 327px;
+    background-color: #1F3641;
+    padding: 24px 24px 30px 24px;
+    box-shadow: inset 0px -8px 0px #10212A;
+    border-radius: 15px;
+    margin-top: 32px;
+    text-align: center;
+}
+.buttons {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    margin-top: 24px;
+    background-color: #10212A;
+    margin-left: -10px;
+    border-radius: 10px;
+
+}
+.btn-box {
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.active{
+    background-color: #A8BFC9;
+
+}
+.x-icon,
+.o-icon {
+    transform: scale(0.7);
+}
+.warning {
+    font-weight: 580px;
+    font-size: 14px;
+    line-height: 17.64px;
+    letter-spacing: 0.88px;
+    color: #A8BFC9;
+    opacity: 0.5;
+    margin-top: 17px;
+}
+.new-game-btn {
+    width: 327px;
+    padding: 14px 0px 22px 0px;
+    background-color: #F2B137;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    font-family: "Outfit", sans-serif;
+}
+.cpu-btn {
+    background-color: #F2B137;
+    margin-top: 32px;
+    box-shadow: inset 1px -6px 1px #cc8b13;
+}
+.button-text {
+    color: #10212A;
+}
+.player-btn {
+    background-color: #31C3BD;
+    margin-top: 16px;
+    box-shadow: inset 1px -6px 1px #118c87;
+}
+.board-header, .statistics {
+    width: 328px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+}
+.turn-box {
+    width: 96px;
+    height: 40px;
+    background: #1F3641;
+    box-shadow: inset 0px -4px 0px #10212A;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+}
+.turn-box img {
+    width: 16px;
+    height: 16px;
+}
+.turn-box h3 {
+    font-weight: 700px;
+    font-size: 14px;
+    font-family: "Outfit", sans-serif;
+    line-height: 17.66px;
+    color: #A8BFC9;
+    letter-spacing: 0.88px;
+    text-transform: uppercase;
+}
+.restart {
+    border: none;
+    width: 40px;
+    height: 40px;
+    background-color: #A8BFC9;
+    box-shadow: inset 0px -4px 0px #6B8997;
+    border-radius: 10px;
+}
+.play-area {
+    margin-top: 64px;
+    width: 328px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.play-btn {
+    width: 96px;
+    height: 96px;
+    background: #1F3641;
+    box-shadow: inset 0px -8px 0px #10212A;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.statistics {
+    margin-top: 24px;
+}
+.statistic-box {
+    width: 96px;
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    color: #10212A;
+}
+.statistic-box:nth-child(1) {
+    background-color: #118c87;
+}
+.statistic-box:nth-child(2) {
+    background-color: #A8BFC9;
+}
+.statistic-box:nth-child(3) {
+    background-color: #F2B137;
+}
+.statistic-box h3 {
+    font-weight: 700px;
+    font-size: 12px;
+    font-family: "Outfit", sans-serif;
+    line-height: 15.12px;
+    letter-spacing: 0.75px;
+    text-transform: uppercase;
+}
+.statistic-box span {
+    font-weight: 700px;
+    font-size: 20px;
+    font-family: "Outfit", sans-serif;
+    line-height: 25.2px;
+    letter-spacing: 1.25px;
+}
+.xHover:hover {
+   background-image: url(./icon-x-outline.svg);
+   background-repeat: no-repeat;
+   background-size: 40px 40px;
+   background-position: center;
+}
+.oHover:hover {
+    background-image: url(./icon-o-outline.svg);
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    background-position: center;  
+}
+.play-icon {
+    width: 40px;
+    height: 40px;
+}
+
+#modal {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+.modal-box{
+    width: 100%;
+    padding: 40px 48px 48px 48px;
+    background-color: rgba(31, 54, 65, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.result-info-text {
+    font-weight: 700px;
+    font-size: 14px;
+    font-family: "Outfit", sans-serif;
+    line-height: 17.66px;
+    color: #A8BFC9;
+    letter-spacing: 0.88px;
+    text-transform: uppercase;
+}
+.modal-box div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+.modal-box div img {
+    width: 30px;
+    height: 30px;
+}
+.result-text {
+    font-weight: 700px;
+    font-size: 24px;
+    font-family: "Outfit", sans-serif;
+    line-height: 30.24px;
+    color: rgba(242, 177, 55, 1);
+    letter-spacing: 0.88px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.result-buttons {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-top: 24px;
+}
+.quit-btn, .next-round-btn {
+    padding: 16px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    font-family: "Outfit", sans-serif;
+    font-weight: 700px;
+    font-size: 16px;
+    line-height: 20.16px;
+    letter-spacing: 1px;
+    color: #1A2A33;
+    text-transform: uppercase;
+}
+.quit-btn {
+    background-color: #A8BFC9;
+    box-shadow:  inset 0px -4px 0px #6B8997;;
+}
+.next-round-btn {
+    background-color: #F2B137;
+    box-shadow: inset 0px -4px 0px #CC8B13;;
+}

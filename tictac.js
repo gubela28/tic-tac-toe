@@ -70,7 +70,7 @@ const onWinX = () => {
     xScore++;
     xScoreElement.textContent = xScore;
     if (player1 === "x") {
-        modalInfoText.textContent = "you won!";
+        modalInfoText.textContent = "X won!";
     } else {
         modalInfoText.textContent = "OH NO, YOU LOST...";
     }
@@ -84,7 +84,7 @@ const onWinO = () => {
     oScore++;
     oScoreElement.textContent = oScore;
     if (player1 !== "x") {
-        modalInfoText.textContent = "you won!";
+        modalInfoText.textContent = "O won!";
     } else {
         modalInfoText.textContent = "OH NO, YOU LOST...";
     }
@@ -214,7 +214,7 @@ reset();
 
 const reset = () => {
 player1 = "x";
-mode ="cpu";
+// mode ="cpu";
 turn ="x";
 freeButtons = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 xArray = [];

@@ -10,7 +10,8 @@ const tieScoreElement = document.querySelector("#tie-score")
 const turnInfoImage = document.querySelector(".turn-box img");
 const modal  = document.querySelector("#modal");
 const modalTie  = document.querySelector("#modal-tie");
-const modalRestart  = document.querySelector("#modal-restart");
+const modalRestart = document.querySelector("#modal-restart");
+const CloseModal = document.querySelector(".quit-btn")
 const modalInfoText = document.querySelector(".result-info-text");
 const modalIcon =document.querySelector(".modal-box img");
 const modalResultText = document.querySelector(".result-text");
@@ -237,7 +238,7 @@ const openRestartModal = () => {
 };
 
 const closeModal = () => {
-
+modalRestart.style.display = "none";
 };
 
 const restartFo = () => {

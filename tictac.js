@@ -70,7 +70,7 @@ const onWinX = () => {
     xScore++;
     xScoreElement.textContent = xScore;
     if (player1 === "x") {
-        modalInfoText.textContent = "X won!";
+        modalInfoText.textContent = "you won!";
     } else {
         modalInfoText.textContent = "OH NO, YOU LOST...";
     }
@@ -84,7 +84,7 @@ const onWinO = () => {
     oScore++;
     oScoreElement.textContent = oScore;
     if (player1 !== "x") {
-        modalInfoText.textContent = "O won!";
+        modalInfoText.textContent = "you won!";
     } else {
         modalInfoText.textContent = "OH NO, YOU LOST...";
     }

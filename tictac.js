@@ -191,11 +191,11 @@ const startGame = (modeParam) => {
         }
     } else {
         if (player1 === "x") {
-            xScoreText.textContent = "x (you)";
-            oScoreText.textContent = "o (cpu)";
+            xScoreText.textContent = "x (p1)";
+            oScoreText.textContent = "o (p2)";
         } else {
-            xScoreText.textContent = "x (cpu)";
-            oScoreText.textContent = "o (you)";
+            xScoreText.textContent = "x (p1)";
+            oScoreText.textContent = "o (p2)";
         }
     }
 };
